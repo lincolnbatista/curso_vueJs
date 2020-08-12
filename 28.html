@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Two-way data binding com v-model</title>
+</head>
+
+<body>
+    <div id="app">
+        <input :vulue="nome" @input="nome = $event.targe.value">
+        <input v-model="nome">
+        <p>Nome: {{ nome }}</p>
+    </div>
+
+    <script type="text/javascript">
+
+             new Vue({
+                 el: '#app',
+                data: {
+                    nome: 'Lincoln'
+                }
+                 
+             })
+        </script>
+
+</body>
+
+</html>

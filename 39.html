@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Renderizando grupos de elementos condicionalmente</title>
+</head>
+
+
+<body>
+    <div id="app">
+     <ul>
+         <li>Olá VueJS</li>
+        <li>Item 1</li>
+        <div i-if="mostrar">
+            <li>Item 1</li>
+            <li>Item 2</li>
+        </div>
+     </ul>
+     </ul>
+    </div>
+
+    <script type="text/javascript">
+
+             new Vue({
+                 el: '#app',
+                
+                  
+                 }
+             });
+        </script>
+
+</body>
+</html>

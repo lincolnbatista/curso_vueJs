@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Trabalhando com v-else-if</title>
+</head>
+
+
+<body>
+    <div id="app">
+      <p v-if="nota === 'A'"> Parabens, você tirou um 'A'</p>
+      <p v-else="nota === 'B'">Voce tirou um 'B' mas pode melhorar!</p>
+      <p v-else-i="nota === 'C'">VocÊ precisa melhorar, estude mais. Sua Nota: 'C'</p>
+      <p v-else >Nota Ainda não publicada.</p>
+      <input v-model="nota" placoholder="Nota">
+    </div>
+
+    <script type="text/javascript">
+
+             new Vue({
+                 el: '#app',
+                 data: {
+                    nota: ''
+                 }
+             });
+        </script>
+
+</body>
+</html>

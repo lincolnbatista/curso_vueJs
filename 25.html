@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Computed Properties vs Watcherss</title>
+</head>
+
+<body>
+    <div id="app">
+      <p>Nome: {{ NomeCompleto }}</p>
+      <button @click="aleterarNomes">Alterar nomes</button>
+    </div>
+
+    <script type="text/javascript">
+
+
+        new Vue({
+            el: '#app',
+            data: {
+                primeiroNome: 'Lincoln',
+                ultimoNome: 'Batista',
+                //NomeCompleto: 'Lincoln Batista'
+            },
+            computed: {
+                NomeCompleto: function( ) {
+                    return this.primeiroNome + ' ' + this.ultimoNome;
+                }
+            },
+           /*  watch: {
+                primeiroNome: function(novoPrimeiroNome, antigoPrimeiroNome) {
+                    this.NomeCompleto = novoPrimeiroNome + ' ' + this.ultimoNome;
+                },
+                ultimoNome: function(novoUltimoNome, antigoUltimoNome) {
+                    this.NomeCompleto = this.primeiroNome + ' ' + novoUltimoNome;
+                }
+             */
+            methods: {
+                aleterarNomes: function(event) {
+                    this.primeiroNome = 'Lincoln';
+                    this.ultimoNome = 'Batista';
+                }
+            }
+        });
+
+
+    </script>
+
+</body>
+
+</html>

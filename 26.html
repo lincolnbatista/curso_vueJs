@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Quando usar Watchers</title>
+</head>
+
+<body>
+    <div id="app">
+        <p>Nome: {{ NomeCompleto }}</p>
+        <button @click="alterarNome">Alterar nome</button>
+    </div>
+
+    <script type="text/javascript">
+
+
+        new Vue({
+            el: '#app',
+            data: {
+                NomeCompleto: 'Lincoln Batista'
+            },
+
+            watch: {
+                NomeCompleto: function (novoNomeCompleto, antigoNomeCompleto) {
+                    var vm = this;
+                    setTimeout(function () {
+                        vm.NomeCompleto = 'Nome resetado!';
+                    }, 3000);
+                }
+            },
+            methods: {
+                alterarNome: function (event) {
+                    this.NomeCompleto = 'Lincoln Batista'
+                }
+            }
+        });
+                /*  watch: {
+primeiroNome: function(novoPrimeiroNome, antigoPrimeiroNome) {
+this.NomeCompleto = novoPrimeiroNome + ' ' + this.ultimoNome;
+},
+ultimoNome: function(novoUltimoNome, antigoUltimoNome) {
+this.NomeCompleto = this.primeiroNome + ' ' + novoUltimoNome;
+}
+*/
+
+
+    </script>
+
+</body>
+
+</html>
